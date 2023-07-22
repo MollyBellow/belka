@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Любовная страница</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .heart {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      transform: rotate(-45deg);
+      display: none; /* Начальное состояние: скрыто */
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    .heart::before {
+      border-radius: 50%;
+      top: -50px;
+      left: 0;
+    }
+    .heart::after {
+      border-radius: 50%;
+      top: 0;
+      left: 50px;
+    }
+    .message {
+          position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 173px;
+    display: none;
+    left: -120px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="showHeart()">Нажми меня</button>
+  <div class="heart" id="heart"></div>
+  <div class="message" id="message">Я тебя люблю<br>булочка моя</div>
+
+  <script>
+    function showHeart() {
+      document.getElementById("heart").style.display = "block"; // Показываем сердце
+      document.getElementById("message").style.display = "block"; // Показываем текст
+    }
+  </script>
+</body>
+</html>
